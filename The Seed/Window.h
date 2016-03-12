@@ -2,7 +2,7 @@
 
 #include "Defs.h"
 #include "WindowVisitor.h"
-namespace core {
+namespace window {
 
 	class Window {
 	
@@ -15,13 +15,8 @@ namespace core {
 		bool init();
 		void accept(WindowVisitor& visitor);
 
-		unsigned getHeight();
-		unsigned getWidth();
-
 	private:
 		std::shared_ptr<SDL_Window> mWindow;
-		unsigned mWidth = WINDOW_WIDTH;
-		unsigned mHeight = WINDOW_HEIGHT;
 
 	};
 }

@@ -25,6 +25,12 @@
     <Filter Include="Source Files\core\window">
       <UniqueIdentifier>{2fcb931f-469d-46fb-a37a-47f277109e9a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\core\window\visitor">
+      <UniqueIdentifier>{1f523a0b-041b-4918-a13b-4eb6a48ac487}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\core\window\visitor">
+      <UniqueIdentifier>{3754cfaa-ebf0-4160-90ec-c835b6c873b2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -36,6 +42,9 @@
     <ClCompile Include="Window.cpp">
       <Filter>Source Files\core\window</Filter>
     </ClCompile>
+    <ClCompile Include="WindowSizeVisitor.cpp">
+      <Filter>Source Files\core\window\visitor</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -44,11 +53,14 @@
     <ClInclude Include="Window.h">
       <Filter>Header Files\core\window</Filter>
     </ClInclude>
-    <ClInclude Include="WindowVisitor.h">
-      <Filter>Header Files\core\window</Filter>
-    </ClInclude>
     <ClInclude Include="Defs.h">
       <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowVisitor.h">
+      <Filter>Header Files\core\window\visitor</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowSizeVisitor.h">
+      <Filter>Header Files\core\window\visitor</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

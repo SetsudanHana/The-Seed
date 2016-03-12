@@ -1,10 +1,11 @@
 #pragma once
 #include "stdafx.h"
 
-namespace core {
+namespace window {
 
 	class WindowVisitor {
 	public:
+		virtual ~WindowVisitor() {}
 		virtual void visit(const std::shared_ptr<SDL_Window>& window) = 0;
 	};
 		
