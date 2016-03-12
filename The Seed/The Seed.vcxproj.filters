@@ -13,6 +13,18 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\core">
+      <UniqueIdentifier>{fd6ca959-a063-4ba9-920b-2b312fee0581}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\core">
+      <UniqueIdentifier>{722a9c6f-a260-4de8-a403-8e83e50007d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\core\window">
+      <UniqueIdentifier>{dfe5caeb-5d07-4764-89b8-301a5fca9974}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\core\window">
+      <UniqueIdentifier>{2fcb931f-469d-46fb-a37a-47f277109e9a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -21,10 +33,22 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Window.cpp">
+      <Filter>Source Files\core\window</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Window.h">
+      <Filter>Header Files\core\window</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowVisitor.h">
+      <Filter>Header Files\core\window</Filter>
+    </ClInclude>
+    <ClInclude Include="Defs.h">
+      <Filter>Header Files\core</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
