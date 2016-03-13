@@ -2,6 +2,8 @@
 
 #include <windows.h>
 #include <memory>
+#include <fstream>
+#include <chrono>
 
 //SDL includes
 #include <SDL.h>

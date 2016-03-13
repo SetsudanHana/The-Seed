@@ -31,6 +31,12 @@
     <Filter Include="Source Files\core\window\visitor">
       <UniqueIdentifier>{3754cfaa-ebf0-4160-90ec-c835b6c873b2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\core\utils">
+      <UniqueIdentifier>{4679d6cb-9fd5-4093-b1b9-0a7fda7de8f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\core\utils">
+      <UniqueIdentifier>{2f5492e8-cd37-42ee-8f43-530b5b32ed5f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -44,6 +50,9 @@
     </ClCompile>
     <ClCompile Include="WindowSizeVisitor.cpp">
       <Filter>Source Files\core\window\visitor</Filter>
+    </ClCompile>
+    <ClCompile Include="Log.cpp">
+      <Filter>Source Files\core\utils</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -61,6 +70,9 @@
     </ClInclude>
     <ClInclude Include="WindowSizeVisitor.h">
       <Filter>Header Files\core\window\visitor</Filter>
+    </ClInclude>
+    <ClInclude Include="Log.h">
+      <Filter>Header Files\core\utils</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
