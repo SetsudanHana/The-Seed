@@ -30,7 +30,7 @@ void utils::Log::logInfo(const std::string& TAG, const std::string& MESSAGE) {
 	this->write("INFO", TAG, MESSAGE);
 }
 
-void utils::Log::logWarrning(const std::string& TAG, const std::string& MESSAGE) {
+void utils::Log::logWarning(const std::string& TAG, const std::string& MESSAGE) {
 	this->write("WARRNING", TAG, MESSAGE);
 }
 

@@ -15,7 +15,7 @@ namespace utils {
 
 		void logDebug(const std::string& TAG, const std::string& MESSAGE);
 		void logInfo(const std::string& TAG, const std::string& MESSAGE);
-		void logWarrning(const std::string& TAG, const std::string& MESSAGE);
+		void logWarning(const std::string& TAG, const std::string& MESSAGE);
 		void logError(const std::string& TAG, const std::string& MESSAGE);
 
 	private:
