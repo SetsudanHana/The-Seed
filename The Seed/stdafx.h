@@ -4,6 +4,8 @@
 #include <memory>
 #include <fstream>
 #include <chrono>
+#include <map>
+#include <functional>
 
 //SDL includes
 #include <SDL.h>

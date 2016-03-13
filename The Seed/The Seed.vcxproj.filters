@@ -37,6 +37,12 @@
     <Filter Include="Source Files\core\utils">
       <UniqueIdentifier>{2f5492e8-cd37-42ee-8f43-530b5b32ed5f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\core\input">
+      <UniqueIdentifier>{3b467bd3-fd24-41a1-b765-0286289201cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\core\input">
+      <UniqueIdentifier>{d76a5b98-fcc1-4be1-9d69-5c30d32b8cc4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -53,6 +59,15 @@
     </ClCompile>
     <ClCompile Include="Log.cpp">
       <Filter>Source Files\core\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Input.cpp">
+      <Filter>Source Files\core\input</Filter>
+    </ClCompile>
+    <ClCompile Include="EventCatcher.cpp">
+      <Filter>Source Files\core\input</Filter>
+    </ClCompile>
+    <ClCompile Include="Command.cpp">
+      <Filter>Source Files\core\input</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -73,6 +88,15 @@
     </ClInclude>
     <ClInclude Include="Log.h">
       <Filter>Header Files\core\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Input.h">
+      <Filter>Header Files\core\input</Filter>
+    </ClInclude>
+    <ClInclude Include="EventCatcher.h">
+      <Filter>Header Files\core\input</Filter>
+    </ClInclude>
+    <ClInclude Include="Command.h">
+      <Filter>Header Files\core\input</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
