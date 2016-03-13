@@ -34,7 +34,7 @@ bool input::EventCatcher::catchEvents() {
 	return false;
 }
 
-void input::EventCatcher::setInput(const std::shared_ptr<Input>& input) {
+void input::EventCatcher::setInput(const std::shared_ptr<KeyboardInput>& input) {
 	if (input != nullptr) {
 		mInput = input;
 	} else {

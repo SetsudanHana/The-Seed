@@ -150,7 +150,7 @@
   <ItemGroup>
     <ClCompile Include="Command.cpp" />
     <ClCompile Include="EventCatcher.cpp" />
-    <ClCompile Include="Input.cpp" />
+    <ClCompile Include="KeyboardInput.cpp" />
     <ClCompile Include="Log.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="stdafx.cpp" />
@@ -161,7 +161,7 @@
     <ClInclude Include="Command.h" />
     <ClInclude Include="Defs.h" />
     <ClInclude Include="EventCatcher.h" />
-    <ClInclude Include="Input.h" />
+    <ClInclude Include="KeyboardInput.h" />
     <ClInclude Include="Log.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Window.h" />

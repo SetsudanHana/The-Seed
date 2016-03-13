@@ -5,13 +5,13 @@
 
 namespace input {
 
-	class Input
+	class KeyboardInput
 	{
 	public:
 
-		Input();
-		Input(const Input&);
-		~Input();
+		KeyboardInput();
+		KeyboardInput(const KeyboardInput&);
+		~KeyboardInput();
 
 		void pushDown(const unsigned&);
 		void pullUp(const unsigned&);

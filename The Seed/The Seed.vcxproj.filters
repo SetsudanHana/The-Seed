@@ -60,13 +60,13 @@
     <ClCompile Include="Log.cpp">
       <Filter>Source Files\core\utils</Filter>
     </ClCompile>
-    <ClCompile Include="Input.cpp">
-      <Filter>Source Files\core\input</Filter>
-    </ClCompile>
     <ClCompile Include="EventCatcher.cpp">
       <Filter>Source Files\core\input</Filter>
     </ClCompile>
     <ClCompile Include="Command.cpp">
+      <Filter>Source Files\core\input</Filter>
+    </ClCompile>
+    <ClCompile Include="KeyboardInput.cpp">
       <Filter>Source Files\core\input</Filter>
     </ClCompile>
   </ItemGroup>
@@ -89,13 +89,13 @@
     <ClInclude Include="Log.h">
       <Filter>Header Files\core\utils</Filter>
     </ClInclude>
-    <ClInclude Include="Input.h">
-      <Filter>Header Files\core\input</Filter>
-    </ClInclude>
     <ClInclude Include="EventCatcher.h">
       <Filter>Header Files\core\input</Filter>
     </ClInclude>
     <ClInclude Include="Command.h">
+      <Filter>Header Files\core\input</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyboardInput.h">
       <Filter>Header Files\core\input</Filter>
     </ClInclude>
   </ItemGroup>

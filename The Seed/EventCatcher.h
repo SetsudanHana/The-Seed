@@ -2,7 +2,7 @@
 
 #include "stdafx.h"
 
-#include "Input.h"
+#include "KeyboardInput.h"
 #include "Log.h"
 
 namespace input {
@@ -16,11 +16,11 @@ namespace input {
 		~EventCatcher();
 
 		bool catchEvents();
-		void setInput(const std::shared_ptr<Input>& input);
+		void setInput(const std::shared_ptr<KeyboardInput>& input);
 
 	private:
 
-		std::shared_ptr<Input> mInput;
+		std::shared_ptr<KeyboardInput> mInput;
 		SDL_Event mEvent;
 	};
 
