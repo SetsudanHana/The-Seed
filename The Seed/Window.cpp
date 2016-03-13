@@ -1,7 +1,10 @@
 #include "Window.h"
 
+static std::string TAG = "WINDOW";
+
 struct SDLWindowDeleter {
 	inline void operator()(SDL_Window* window) {
+		utils::Log::Instance()->logDebug(TAG, "SDL window destroyed");
 		SDL_DestroyWindow(window);
 	}
 };
@@ -19,8 +22,11 @@ bool window::Window::init() {
 	this->mWindow = std::shared_ptr<SDL_Window>(SDL_CreateWindow(WINDOW_TITLE, WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2, WINDOW_WIDTH, WINDOW_HEIGHT, SDL_WINDOW_OPENGL), SDLWindowDeleter());
 
 	if (!this->mWindow) {
+		std::string error(SDL_GetError());
+		utils::Log::Instance()->logError(TAG, "SDL window createtion error: " + error);
 		return false;
 	}
+	utils::Log::Instance()->logDebug(TAG, "SDL window created");
 
 	return true;
 }

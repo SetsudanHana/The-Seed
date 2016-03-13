@@ -1,7 +1,9 @@
 #pragma once
 
 #include "Defs.h"
+#include "Log.h"
 #include "WindowVisitor.h"
+
 namespace window {
 
 	class Window {
