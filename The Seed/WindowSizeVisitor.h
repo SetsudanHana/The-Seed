@@ -12,7 +12,7 @@ namespace window {
 		WindowSizeVisitor(const WindowSizeVisitor&);
 		~WindowSizeVisitor();
 
-		void visit(const std::shared_ptr<SDL_Window>& window);
+		void visit(const std::shared_ptr<SDL_Window> window);
 
 		int getHeight();
 		int getWidth();

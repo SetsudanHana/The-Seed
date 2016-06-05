@@ -12,7 +12,7 @@ window::WindowSizeVisitor::~WindowSizeVisitor()
 {
 }
 
-void window::WindowSizeVisitor::visit(const std::shared_ptr<SDL_Window>& window){
+void window::WindowSizeVisitor::visit(const std::shared_ptr<SDL_Window> window){
 	SDL_GetWindowSize(window.get(), &mWidth, &mHeight);
 }
 
