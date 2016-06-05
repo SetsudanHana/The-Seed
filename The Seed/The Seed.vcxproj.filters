@@ -43,6 +43,18 @@
     <Filter Include="Header Files\core\input">
       <UniqueIdentifier>{d76a5b98-fcc1-4be1-9d69-5c30d32b8cc4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\core\ogl">
+      <UniqueIdentifier>{07043058-b250-45ae-891f-c9a4f8c497b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\core\ogl\visitor">
+      <UniqueIdentifier>{49eb34a8-3d41-4be9-bc89-e153faffce16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\core\ogl">
+      <UniqueIdentifier>{c1801ba3-f53e-4e6b-887e-bd86d97e7f1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\core\ogl\visitor">
+      <UniqueIdentifier>{68ad4907-635e-44b0-8e8d-99e8c522f369}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -68,6 +80,9 @@
     </ClCompile>
     <ClCompile Include="KeyboardInput.cpp">
       <Filter>Source Files\core\input</Filter>
+    </ClCompile>
+    <ClCompile Include="GLContext.cpp">
+      <Filter>Source Files\core\ogl</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -97,6 +112,12 @@
     </ClInclude>
     <ClInclude Include="KeyboardInput.h">
       <Filter>Header Files\core\input</Filter>
+    </ClInclude>
+    <ClInclude Include="GLContextVisitor.h">
+      <Filter>Header Files\core\ogl\visitor</Filter>
+    </ClInclude>
+    <ClInclude Include="GLContext.h">
+      <Filter>Header Files\core\ogl</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

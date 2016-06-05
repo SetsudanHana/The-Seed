@@ -71,8 +71,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Projects\The-Seed\The Seed\lib\SDL2-2.0.4\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Projects\The-Seed\The Seed\lib\SDL2-2.0.4\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Projects\The-Seed\The Seed\lib\GLEW\include;C:\Projects\The-Seed\The Seed\lib\SDL2-2.0.4\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Projects\The-Seed\The Seed\lib\GLEW\lib\Release\Win32;C:\Projects\The-Seed\The Seed\lib\SDL2-2.0.4\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -152,6 +152,7 @@
   <ItemGroup>
     <ClCompile Include="Command.cpp" />
     <ClCompile Include="EventCatcher.cpp" />
+    <ClCompile Include="GLContext.cpp" />
     <ClCompile Include="KeyboardInput.cpp" />
     <ClCompile Include="Log.cpp" />
     <ClCompile Include="main.cpp" />
@@ -163,6 +164,8 @@
     <ClInclude Include="Command.h" />
     <ClInclude Include="Defs.h" />
     <ClInclude Include="EventCatcher.h" />
+    <ClInclude Include="GLContext.h" />
+    <ClInclude Include="GLContextVisitor.h" />
     <ClInclude Include="KeyboardInput.h" />
     <ClInclude Include="Log.h" />
     <ClInclude Include="stdafx.h" />

@@ -4,11 +4,16 @@
 #include "EventCatcher.h"
 #include "Window.h"
 #include "WindowSizeVisitor.h"
+#include "GLContext.h"
 
 int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _In_ LPSTR lpCmdLine, _In_ int nShowCmd)
 {
-	auto window = std::make_unique<window::Window>();
+	auto window = std::make_shared<window::Window>();
 	window->init();
+
+	auto glContext = std::make_shared<gl::GLContext>();
+	glContext->enableDebug();
+	glContext->init(window);
 
 	bool end = false;
 
