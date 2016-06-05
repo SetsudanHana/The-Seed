@@ -71,7 +71,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Projects\The-Seed\The Seed\lib\GLEW\include;C:\Projects\The-Seed\The Seed\lib\SDL2-2.0.4\include;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Projects\The-Seed\The Seed\lib\glm;C:\Projects\The-Seed\The Seed\lib\GLEW\include;C:\Projects\The-Seed\The Seed\lib\SDL2-2.0.4\include;$(IncludePath)</IncludePath>
     <LibraryPath>C:\Projects\The-Seed\The Seed\lib\GLEW\lib\Release\Win32;C:\Projects\The-Seed\The Seed\lib\SDL2-2.0.4\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">

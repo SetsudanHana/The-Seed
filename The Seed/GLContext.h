@@ -6,7 +6,6 @@
 #include "Window.h"
 #include "WindowVisitor.h"
 #include "GLContextVisitor.h"
-#include <string>
 
 namespace gl {
 
