@@ -16,6 +16,7 @@ namespace gl {
 			GLContext(const GLContext&);
 			~GLContext();
 
+			bool isInitialized();
 			bool init(const std::shared_ptr<window::Window>& window);
 			void enableDebug();
 
@@ -31,6 +32,7 @@ namespace gl {
 		private:
 			static const std::string TAG;
 			std::shared_ptr<SDL_GLContext> mGlContext;
+			bool initlialized = false;
 
 		private:
 			class GLContextCreatorWindowVisitor : public window::WindowVisitor {
@@ -43,12 +45,12 @@ namespace gl {
 			};
 
 			class GetWindowVisitor : public window::WindowVisitor {
-			public:
-				std::shared_ptr<SDL_Window> mWindow;
+				public:
+					std::shared_ptr<SDL_Window> mWindow;
 
-				void visit(const std::shared_ptr<SDL_Window> window) {
-					this->mWindow = window;
-				}
+					void visit(const std::shared_ptr<SDL_Window> window) {
+						this->mWindow = window;
+					}
 			};
 
 	};

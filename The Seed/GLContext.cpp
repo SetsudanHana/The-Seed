@@ -14,6 +14,10 @@ gl::GLContext::~GLContext() {
 	utils::Log::Instance()->logDebug(TAG, "OpenGl context removed");
 }
 
+bool gl::GLContext::isInitialized() {
+	return initlialized;
+}
+
 bool gl::GLContext::init(const std::shared_ptr<window::Window>& window) {
 	if (window == nullptr) {
 		utils::Log::Instance()->logError(TAG, "Window is not initialized");
@@ -60,9 +64,9 @@ bool gl::GLContext::init(const std::shared_ptr<window::Window>& window) {
 	utils::Log::Instance()->logDebug(TAG, (char*)glewGetString(GLEW_VERSION));
 
 	glEnable(GL_DEPTH_TEST);
-
 	glDepthFunc(GL_LESS);
 
+	initlialized = true;
 	return true;
 }
 
