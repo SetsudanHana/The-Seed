@@ -20,3 +20,9 @@
 #pragma comment(lib, "opengl32.lib")	
 #pragma comment(lib, "glew32.lib")
 
+//GLM includes
+#define GLM_FORCE_RADIANS
+#include <glm.hpp>
+#include <gtc/type_ptr.hpp>
+#include <gtc/matrix_transform.hpp>
+
