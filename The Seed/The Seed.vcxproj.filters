@@ -61,6 +61,12 @@
     <Filter Include="Source Files\core\ogl\renderer">
       <UniqueIdentifier>{00d245ff-0375-48d0-aa17-f36e567e8318}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\core\ogl\resources">
+      <UniqueIdentifier>{ceba134a-9215-4d73-be9b-458246eb066d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\core\ogl\resources">
+      <UniqueIdentifier>{f4556660-f1ab-4d67-934f-b1fdc19664be}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -92,6 +98,9 @@
     </ClCompile>
     <ClCompile Include="Renderer.cpp">
       <Filter>Source Files\core\ogl\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader.cpp">
+      <Filter>Source Files\core\ogl\resources</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -130,6 +139,9 @@
     </ClInclude>
     <ClInclude Include="Renderer.h">
       <Filter>Header Files\core\ogl\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader.h">
+      <Filter>Header Files\core\ogl\resources</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
