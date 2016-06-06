@@ -55,6 +55,12 @@
     <Filter Include="Source Files\core\ogl\visitor">
       <UniqueIdentifier>{68ad4907-635e-44b0-8e8d-99e8c522f369}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\core\ogl\renderer">
+      <UniqueIdentifier>{53176d8d-24ec-4acc-82e4-3dc5257d495c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\core\ogl\renderer">
+      <UniqueIdentifier>{00d245ff-0375-48d0-aa17-f36e567e8318}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -83,6 +89,9 @@
     </ClCompile>
     <ClCompile Include="GLContext.cpp">
       <Filter>Source Files\core\ogl</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer.cpp">
+      <Filter>Source Files\core\ogl\renderer</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -118,6 +127,9 @@
     </ClInclude>
     <ClInclude Include="GLContext.h">
       <Filter>Header Files\core\ogl</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer.h">
+      <Filter>Header Files\core\ogl\renderer</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

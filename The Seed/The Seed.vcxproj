@@ -156,6 +156,7 @@
     <ClCompile Include="KeyboardInput.cpp" />
     <ClCompile Include="Log.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="Window.cpp" />
     <ClCompile Include="WindowSizeVisitor.cpp" />
@@ -168,6 +169,7 @@
     <ClInclude Include="GLContextVisitor.h" />
     <ClInclude Include="KeyboardInput.h" />
     <ClInclude Include="Log.h" />
+    <ClInclude Include="Renderer.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Window.h" />
     <ClInclude Include="WindowSizeVisitor.h" />

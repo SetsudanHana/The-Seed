@@ -5,6 +5,7 @@
 #include "Window.h"
 #include "WindowSizeVisitor.h"
 #include "GLContext.h"
+#include "Renderer.h"
 
 int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _In_ LPSTR lpCmdLine, _In_ int nShowCmd)
 {
@@ -12,8 +13,10 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 	window->init();
 
 	auto glContext = std::make_shared<gl::GLContext>();
-	glContext->enableDebug();
 	glContext->init(window);
+
+	auto renderer = std::make_shared<gl::Renderer>();
+	renderer->bindWith(glContext);
 
 	bool end = false;
 
@@ -28,6 +31,9 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 	while (!end) {
 		end = eventCatcher->catchEvents();
 		input->execKeysDown();
+
+		renderer->clear(glm::vec4(0.8f, 0.8f, 0.8f, 1.0f));
+		renderer->swap(window);
 	}
 
 	return 0;
