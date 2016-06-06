@@ -34,8 +34,7 @@ bool gl::Renderer::bindWith(std::shared_ptr<GLContext> glContext){
 
 void gl::Renderer::clear(const glm::vec4 & color){
 
-	if (!mGlContext)
-	{
+	if (!mGlContext) {
 		utils::Log::Instance()->logError(TAG, "OpenGl context is not bound");
 		return;
 	}
@@ -47,8 +46,7 @@ void gl::Renderer::clear(const glm::vec4 & color){
 
 void gl::Renderer::swap(std::shared_ptr<window::Window> window){
 
-	if (!mGlContext)
-	{
+	if (!mGlContext) {
 		utils::Log::Instance()->logError(TAG, "OpenGl context is not bound");
 		return;
 	}
