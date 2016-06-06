@@ -21,17 +21,13 @@ gl::Shader::~Shader(){
 }
 
 void gl::Shader::setProgram(unsigned& program){
-	std::shared_ptr<unsigned int> ptr(&program, ShaderDeleter());
- 	mProgram = ptr;
-}
-
-std::shared_ptr<unsigned> gl::Shader::getProgram(){
-	return mProgram;
+	std::unique_ptr<unsigned int, std::function<void(unsigned int*)>> ptr(&program, ShaderDeleter());
+ 	mProgram = std::move(ptr);
 }
 
 void gl::Shader::useProgram(){
 	std::stringstream out;
-	out << "Using program: " << mProgram;
+	out << "Using program: " << mProgram.get();
 	utils::Log::Instance()->logInfo(TAG, out.str());
 	glUseProgram(*mProgram.get());
 }

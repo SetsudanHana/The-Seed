@@ -13,7 +13,6 @@ namespace gl {
 			~Shader();
 
 			void setProgram(unsigned& program);
-			std::shared_ptr<unsigned> getProgram();
 
 			void useProgram();
 
@@ -27,7 +26,7 @@ namespace gl {
 			void setMatrix4(const glm::mat4&, const std::string&);
 
 		private:
-			std::shared_ptr<unsigned> mProgram;
+			std::unique_ptr<unsigned, std::function<void(unsigned int*)>> mProgram;
 	};
 
 }
