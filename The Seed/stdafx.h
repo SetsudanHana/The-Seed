@@ -5,6 +5,7 @@
 #include <windows.h>
 #include <memory>
 #include <fstream>
+#include <sstream>
 #include <chrono>
 #include <map>
 #include <functional>
