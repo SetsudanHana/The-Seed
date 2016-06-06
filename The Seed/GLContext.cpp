@@ -72,6 +72,7 @@ bool gl::GLContext::init(const std::shared_ptr<window::Window>& window) {
 
 void gl::GLContext::enableDebug() {
 	if (glDebugMessageCallbackARB != NULL) {
+		utils::Log::Instance()->logInfo(TAG, "Enabling OpenGl debug");
 		glDebugMessageCallbackARB(&gl::GLContext::ErrorCallback, NULL);
 		glEnable(GL_DEBUG_OUTPUT);
 	}
