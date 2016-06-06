@@ -9,10 +9,9 @@ namespace gl {
 
 		public:
 			Shader();
+			Shader(unsigned& program);
 			Shader(const Shader&);
 			~Shader();
-
-			void setProgram(unsigned& program);
 
 			void useProgram();
 

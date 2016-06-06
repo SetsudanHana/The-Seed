@@ -12,17 +12,17 @@ struct ShaderDeleter {
 };
 
 gl::Shader::Shader(){
-}	
+}
+
+gl::Shader::Shader(unsigned & program){
+	std::unique_ptr<unsigned int, std::function<void(unsigned int*)>> ptr(&program, ShaderDeleter());
+	mProgram = std::move(ptr);
+}
 
 gl::Shader::Shader(const Shader &){
 }
 
 gl::Shader::~Shader(){
-}
-
-void gl::Shader::setProgram(unsigned& program){
-	std::unique_ptr<unsigned int, std::function<void(unsigned int*)>> ptr(&program, ShaderDeleter());
- 	mProgram = std::move(ptr);
 }
 
 void gl::Shader::useProgram(){
