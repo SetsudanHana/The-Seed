@@ -67,6 +67,12 @@
     <Filter Include="Source Files\core\ogl\resources">
       <UniqueIdentifier>{f4556660-f1ab-4d67-934f-b1fdc19664be}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\core\utils\loader">
+      <UniqueIdentifier>{eb6ab6f2-d91e-4081-b42a-0c31c5e98e59}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\core\utils\loader">
+      <UniqueIdentifier>{9f85b83b-6ac5-48e3-b01e-7436e396768c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -101,6 +107,9 @@
     </ClCompile>
     <ClCompile Include="Shader.cpp">
       <Filter>Source Files\core\ogl\resources</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderLoader.cpp">
+      <Filter>Source Files\core\utils\loader</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -142,6 +151,12 @@
     </ClInclude>
     <ClInclude Include="Shader.h">
       <Filter>Header Files\core\ogl\resources</Filter>
+    </ClInclude>
+    <ClInclude Include="Loader.h">
+      <Filter>Header Files\core\utils\loader</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderLoader.h">
+      <Filter>Header Files\core\utils\loader</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
