@@ -111,6 +111,9 @@
     <ClCompile Include="ShaderLoader.cpp">
       <Filter>Source Files\core\utils\loader</Filter>
     </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>Source Files\core\ogl\resources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -157,6 +160,9 @@
     </ClInclude>
     <ClInclude Include="ShaderLoader.h">
       <Filter>Header Files\core\utils\loader</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Header Files\core\ogl\resources</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
