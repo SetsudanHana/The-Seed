@@ -117,6 +117,9 @@
     <ClCompile Include="TextureLoader.cpp">
       <Filter>Source Files\core\utils\loader</Filter>
     </ClCompile>
+    <ClCompile Include="VertexBufferObject.cpp">
+      <Filter>Source Files\core\ogl\resources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -169,6 +172,9 @@
     </ClInclude>
     <ClInclude Include="TextureLoader.h">
       <Filter>Header Files\core\utils\loader</Filter>
+    </ClInclude>
+    <ClInclude Include="VertexBufferObject.h">
+      <Filter>Header Files\core\ogl\resources</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
