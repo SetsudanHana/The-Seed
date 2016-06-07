@@ -5,7 +5,6 @@
 #include "Log.h"
 #include "Window.h"
 #include "WindowVisitor.h"
-#include "GLContextVisitor.h"
 
 namespace gl {
 
@@ -19,8 +18,6 @@ namespace gl {
 			bool isInitialized();
 			bool init(const std::shared_ptr<window::Window>& window);
 			void enableDebug();
-
-			void accept(GLContextVisitor& visitor);
 
 		private:
 			static void APIENTRY ErrorCallback(

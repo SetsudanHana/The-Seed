@@ -172,7 +172,6 @@
     <ClInclude Include="Defs.h" />
     <ClInclude Include="EventCatcher.h" />
     <ClInclude Include="GLContext.h" />
-    <ClInclude Include="GLContextVisitor.h" />
     <ClInclude Include="KeyboardInput.h" />
     <ClInclude Include="Loader.h" />
     <ClInclude Include="Log.h" />

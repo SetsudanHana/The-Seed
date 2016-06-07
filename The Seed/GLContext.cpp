@@ -77,7 +77,3 @@ void gl::GLContext::enableDebug() {
 		glEnable(GL_DEBUG_OUTPUT);
 	}
 }
-
-void gl::GLContext::accept(GLContextVisitor & visitor) {
-	visitor.visit(mGlContext);
-}
