@@ -11,7 +11,7 @@ utils::ShaderLoader::ShaderLoader(const ShaderLoader &){
 utils::ShaderLoader::~ShaderLoader(){
 }
 
-gl::Shader utils::ShaderLoader::load(const std::string name)
+gl::Shader utils::ShaderLoader::load(const std::string& name)
 {
 	std::string vs_container = loadShaderFile(SHADER_DIRECTORY + name + ".vs");
 
