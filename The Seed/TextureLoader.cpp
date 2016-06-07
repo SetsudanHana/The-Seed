@@ -39,5 +39,6 @@ gl::Texture utils::TextureLoader::load(const std::string& name){
 
 	FreeImage_Unload(pImage);
 
+	utils::Log::Instance()->logDebug(TAG, "Created texture from path: " + path);
 	return gl::Texture(texture, nWidth, nHeight);
 }
