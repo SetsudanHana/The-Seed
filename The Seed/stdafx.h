@@ -27,3 +27,8 @@
 #include <gtc/type_ptr.hpp>
 #include <gtc/matrix_transform.hpp>
 
+//FreeImage includes
+#include <FreeImage.h>
+
+#pragma comment (lib, "FreeImage.lib")
+
