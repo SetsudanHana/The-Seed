@@ -29,10 +29,10 @@ gl::Texture::~Texture(){
 
 void gl::Texture::useTexture(const unsigned & sampler){
 	std::stringstream out;
-	out << "Using texture with id: " << *mTextureId.get() << ", for sampler: " << sampler;
+	out << "Using texture with id: " << *mTextureId << ", for sampler: " << sampler;
 	utils::Log::Instance()->logDebug(TAG, out.str());
 	glActiveTexture(GL_TEXTURE0 + sampler);
-	glBindTexture(GL_TEXTURE_2D, *mTextureId.get());
+	glBindTexture(GL_TEXTURE_2D, *mTextureId);
 }
 
 unsigned gl::Texture::getHeight() {

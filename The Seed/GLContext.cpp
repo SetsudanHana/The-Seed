@@ -10,7 +10,7 @@ gl::GLContext::GLContext(const GLContext &) {
 
 gl::GLContext::~GLContext() {
 	glDisable(GL_DEPTH_TEST);
-	SDL_GL_DeleteContext(mGlContext.get());
+	SDL_GL_DeleteContext(*mGlContext);
 	utils::Log::Instance()->logDebug(TAG, "OpenGl context removed");
 }
 
@@ -50,7 +50,7 @@ bool gl::GLContext::init(const std::shared_ptr<window::Window>& window) {
 	GetWindowVisitor getWindowVisitor;
 	window->accept(getWindowVisitor);
 
- 	SDL_GL_MakeCurrent(getWindowVisitor.mWindow.get(), *mGlContext.get());
+ 	SDL_GL_MakeCurrent(getWindowVisitor.mWindow.get(), *mGlContext);
 
 	glewExperimental = GL_TRUE;
 

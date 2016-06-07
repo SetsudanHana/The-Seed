@@ -27,13 +27,13 @@ gl::Shader::~Shader(){
 
 void gl::Shader::useProgram(){
 	std::stringstream out;
-	out << "Using program: " << mProgram.get();
+	out << "Using program: " << *mProgram;
 	utils::Log::Instance()->logInfo(TAG, out.str());
-	glUseProgram(*mProgram.get());
+	glUseProgram(*mProgram);
 }
 
 void gl::Shader::setField(const float & value, const std::string & name){
-	GLint location = glGetUniformLocation(*mProgram.get(), name.c_str());
+	GLint location = glGetUniformLocation(*mProgram, name.c_str());
 	if (location == -1) {
 		utils::Log::Instance()->logWarning(TAG, "Trying to attach field which does not exist, with name: " + name);
 	}
@@ -41,7 +41,7 @@ void gl::Shader::setField(const float & value, const std::string & name){
 }
 
 void gl::Shader::setSampler(const UINT & sampler, const std::string & name){
-	GLint location = glGetUniformLocation(*mProgram.get(), name.c_str());
+	GLint location = glGetUniformLocation(*mProgram, name.c_str());
 	if (location == -1) {
 		utils::Log::Instance()->logWarning(TAG, "Trying to attach sampler which does not exist, with name: " + name);
 	}
@@ -49,7 +49,7 @@ void gl::Shader::setSampler(const UINT & sampler, const std::string & name){
 }
 
 void gl::Shader::setVector2(const glm::vec2 & vector, const std::string & name){
-	GLint location = glGetUniformLocation(*mProgram.get(), name.c_str());
+	GLint location = glGetUniformLocation(*mProgram, name.c_str());
 	if (location == -1) {
 		utils::Log::Instance()->logWarning(TAG, "Trying to attach vec2 which does not exist, with name: " + name);
 	}
@@ -57,7 +57,7 @@ void gl::Shader::setVector2(const glm::vec2 & vector, const std::string & name){
 }
 
 void gl::Shader::setVector3(const glm::vec3 & vector, const std::string & name){
-	GLint location = glGetUniformLocation(*mProgram.get(), name.c_str());
+	GLint location = glGetUniformLocation(*mProgram, name.c_str());
 	if (location == -1) {
 		utils::Log::Instance()->logWarning(TAG, "Trying to attach vec3 which does not exist, with name: " + name);
 	}
@@ -65,7 +65,7 @@ void gl::Shader::setVector3(const glm::vec3 & vector, const std::string & name){
 }
 
 void gl::Shader::setVector4(const glm::vec4 & vector, const std::string & name){
-	GLint location = glGetUniformLocation(*mProgram.get(), name.c_str());
+	GLint location = glGetUniformLocation(*mProgram, name.c_str());
 	if (location == -1) {
 		utils::Log::Instance()->logWarning(TAG, "Trying to attach vec4 which does not exist, with name: " + name);
 	}
@@ -73,7 +73,7 @@ void gl::Shader::setVector4(const glm::vec4 & vector, const std::string & name){
 }
 
 void gl::Shader::setMatrix2(const glm::mat2 & matrix, const std::string & name){
-	GLint location = glGetUniformLocation(*mProgram.get(), name.c_str());
+	GLint location = glGetUniformLocation(*mProgram, name.c_str());
 	if (location == -1) {
 		utils::Log::Instance()->logWarning(TAG, "Trying to attach mat2 which does not exist, with name: " + name);
 	}
@@ -81,7 +81,7 @@ void gl::Shader::setMatrix2(const glm::mat2 & matrix, const std::string & name){
 }
 
 void gl::Shader::setMatrix3(const glm::mat3 & matrix, const std::string & name){
-	GLint location = glGetUniformLocation(*mProgram.get(), name.c_str());
+	GLint location = glGetUniformLocation(*mProgram, name.c_str());
 	if (location == -1) {
 		utils::Log::Instance()->logWarning(TAG, "Trying to attach mat3 which does not exist, with name: " + name);
 	}
@@ -89,7 +89,7 @@ void gl::Shader::setMatrix3(const glm::mat3 & matrix, const std::string & name){
 }
 
 void gl::Shader::setMatrix4(const glm::mat4 & matrix, const std::string & name){
-	GLint location = glGetUniformLocation(*mProgram.get(), name.c_str());
+	GLint location = glGetUniformLocation(*mProgram, name.c_str());
 	if (location == -1) {
 		utils::Log::Instance()->logWarning(TAG, "Trying to attach mat4 which does not exist, with name: " + name);
 	}
