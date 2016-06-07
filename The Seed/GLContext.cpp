@@ -2,6 +2,14 @@
 
 const std::string gl::GLContext::TAG = "GLContext";
 
+struct GLContextDeleter {
+	inline void operator()(SDL_GLContext* glContext) {
+		glDisable(GL_DEPTH_TEST);
+		SDL_GL_DeleteContext(*glContext);
+		utils::Log::Instance()->logDebug(gl::GLContext::TAG, "OpenGl context removed");
+	}
+};
+
 gl::GLContext::GLContext() {
 }
 
@@ -9,9 +17,6 @@ gl::GLContext::GLContext(const GLContext &) {
 }
 
 gl::GLContext::~GLContext() {
-	glDisable(GL_DEPTH_TEST);
-	SDL_GL_DeleteContext(*mGlContext);
-	utils::Log::Instance()->logDebug(TAG, "OpenGl context removed");
 }
 
 bool gl::GLContext::isInitialized() {
@@ -32,7 +37,8 @@ bool gl::GLContext::init(const std::shared_ptr<window::Window>& window) {
 
 	gl::GLContext::GLContextCreatorWindowVisitor visitor;
 	window->accept(visitor);
-	mGlContext = visitor.mGlContext;
+	std::unique_ptr<SDL_GLContext, std::function<void(SDL_GLContext*)>> ptr(&visitor.mGlContext, GLContextDeleter());
+	mGlContext = std::move(ptr);
 
 	if (!mGlContext) {
 		utils::Log::Instance()->logError(TAG, "OpenGl context is not initialized");

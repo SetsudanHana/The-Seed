@@ -9,6 +9,8 @@
 namespace gl {
 
 	class GLContext {
+		public:
+			static const std::string TAG;
 
 		public:
 			GLContext();
@@ -27,17 +29,16 @@ namespace gl {
 			}
 
 		private:
-			static const std::string TAG;
-			std::shared_ptr<SDL_GLContext> mGlContext;
+			std::unique_ptr<SDL_GLContext, std::function<void(SDL_GLContext*)>> mGlContext;
 			bool initlialized = false;
 
 		private:
 			class GLContextCreatorWindowVisitor : public window::WindowVisitor {
 				public:
-					std::shared_ptr<SDL_GLContext> mGlContext;
+					SDL_GLContext mGlContext;
 
 					void visit(const std::shared_ptr<SDL_Window> window) {
-						this->mGlContext = std::make_shared<SDL_GLContext>(SDL_GL_CreateContext(window.get()));
+						this->mGlContext = SDL_GL_CreateContext(window.get());
 					}
 			};
 
