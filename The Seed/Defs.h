@@ -6,3 +6,4 @@
 #define WINDOW_TITLE "The Seed"
 
 #define SHADER_DIRECTORY "../data/shaders/"
+#define TEXTURE_DIRECTORY "../data/texture/"
