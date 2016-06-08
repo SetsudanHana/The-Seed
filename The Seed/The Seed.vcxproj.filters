@@ -67,6 +67,12 @@
     <Filter Include="Source Files\core\utils\loader">
       <UniqueIdentifier>{9f85b83b-6ac5-48e3-b01e-7436e396768c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\core\ogl\buffers">
+      <UniqueIdentifier>{fd8c4ae5-90db-4af2-96d1-da218c58f0e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\core\ogl\buffers">
+      <UniqueIdentifier>{318fb350-c17b-4189-a18b-339f210eb85a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -111,14 +117,14 @@
     <ClCompile Include="TextureLoader.cpp">
       <Filter>Source Files\core\utils\loader</Filter>
     </ClCompile>
-    <ClCompile Include="VertexBufferObject.cpp">
-      <Filter>Source Files\core\ogl\resources</Filter>
+    <ClCompile Include="IndexBufferObject.cpp">
+      <Filter>Source Files\core\ogl\buffers</Filter>
     </ClCompile>
     <ClCompile Include="VertexArrayObject.cpp">
-      <Filter>Source Files\core\ogl\resources</Filter>
+      <Filter>Source Files\core\ogl\buffers</Filter>
     </ClCompile>
-    <ClCompile Include="IndexBufferObject.cpp">
-      <Filter>Source Files\core\ogl\resources</Filter>
+    <ClCompile Include="VertexBufferObject.cpp">
+      <Filter>Source Files\core\ogl\buffers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -171,13 +177,13 @@
       <Filter>Header Files\core\utils\loader</Filter>
     </ClInclude>
     <ClInclude Include="VertexBufferObject.h">
-      <Filter>Header Files\core\ogl\resources</Filter>
-    </ClInclude>
-    <ClInclude Include="VertexArrayObject.h">
-      <Filter>Header Files\core\ogl\resources</Filter>
+      <Filter>Header Files\core\ogl\buffers</Filter>
     </ClInclude>
     <ClInclude Include="IndexBufferObject.h">
-      <Filter>Header Files\core\ogl\resources</Filter>
+      <Filter>Header Files\core\ogl\buffers</Filter>
+    </ClInclude>
+    <ClInclude Include="VertexArrayObject.h">
+      <Filter>Header Files\core\ogl\buffers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
