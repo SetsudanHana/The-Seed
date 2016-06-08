@@ -153,6 +153,7 @@
     <ClCompile Include="Command.cpp" />
     <ClCompile Include="EventCatcher.cpp" />
     <ClCompile Include="GLContext.cpp" />
+    <ClCompile Include="IndexBufferObject.cpp" />
     <ClCompile Include="KeyboardInput.cpp" />
     <ClCompile Include="Log.cpp" />
     <ClCompile Include="main.cpp" />
@@ -172,6 +173,7 @@
     <ClInclude Include="Defs.h" />
     <ClInclude Include="EventCatcher.h" />
     <ClInclude Include="GLContext.h" />
+    <ClInclude Include="IndexBufferObject.h" />
     <ClInclude Include="KeyboardInput.h" />
     <ClInclude Include="Loader.h" />
     <ClInclude Include="Log.h" />

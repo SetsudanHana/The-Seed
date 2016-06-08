@@ -117,6 +117,9 @@
     <ClCompile Include="VertexArrayObject.cpp">
       <Filter>Source Files\core\ogl\resources</Filter>
     </ClCompile>
+    <ClCompile Include="IndexBufferObject.cpp">
+      <Filter>Source Files\core\ogl\resources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -171,6 +174,9 @@
       <Filter>Header Files\core\ogl\resources</Filter>
     </ClInclude>
     <ClInclude Include="VertexArrayObject.h">
+      <Filter>Header Files\core\ogl\resources</Filter>
+    </ClInclude>
+    <ClInclude Include="IndexBufferObject.h">
       <Filter>Header Files\core\ogl\resources</Filter>
     </ClInclude>
   </ItemGroup>
