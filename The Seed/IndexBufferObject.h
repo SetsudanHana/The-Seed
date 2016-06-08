@@ -9,22 +9,16 @@ namespace gl {
 	class IndexBufferObject {
 
 		public:
-			enum IndexBufferObjectType {
-				UNSIGNED_SHORT,
-				UNSIGNED_INT
-			};
-
-		public:
 			IndexBufferObject();
-			IndexBufferObject(unsigned&, IndexBufferObjectType&);
+			IndexBufferObject(unsigned&, unsigned&, GLenum&);
 			IndexBufferObject(const IndexBufferObject&);
 			~IndexBufferObject();
 
 			void useIBO();
-			IndexBufferObjectType getType();
 
 		private:
-			IndexBufferObjectType mType;
+			unsigned mSize;
+			GLenum mMode;
 			std::unique_ptr<unsigned, std::function<void(unsigned int*)>> mIboId;
 
 	};

@@ -14,10 +14,10 @@ struct IndesBufferObjectDeleter {
 gl::IndexBufferObject::IndexBufferObject(){
 }
 
-gl::IndexBufferObject::IndexBufferObject(unsigned & iboId, IndexBufferObjectType & type){
+gl::IndexBufferObject::IndexBufferObject(unsigned & iboId, unsigned & size, GLenum& mode) {
 	std::unique_ptr<unsigned int, std::function<void(unsigned int*)>> ptr(&iboId, IndesBufferObjectDeleter());
 	mIboId = std::move(ptr);
-	mType = type;
+	mSize = size;
 }
 
 gl::IndexBufferObject::IndexBufferObject(const IndexBufferObject &){
@@ -27,8 +27,7 @@ gl::IndexBufferObject::~IndexBufferObject(){
 }
 
 void gl::IndexBufferObject::useIBO(){
-}
-
-gl::IndexBufferObject::IndexBufferObjectType gl::IndexBufferObject::getType(){
-	return mType;
+	const size_t intHashcode = typeid(int).hash_code();
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, *mIboId);
+	glDrawElements(mMode, mSize, GL_UNSIGNED_SHORT, (void*)0);
 }
