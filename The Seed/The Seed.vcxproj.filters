@@ -135,6 +135,9 @@
     <ClCompile Include="VertexBufferObjectGenerator.cpp">
       <Filter>Source Files\core\utils\generator</Filter>
     </ClCompile>
+    <ClCompile Include="IndexBufferObjectGenerator.cpp">
+      <Filter>Source Files\core\utils\generator</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -198,6 +201,9 @@
       <Filter>Header Files\core\utils\generator</Filter>
     </ClInclude>
     <ClInclude Include="VertexBufferObjectGenerator.h">
+      <Filter>Header Files\core\utils\generator</Filter>
+    </ClInclude>
+    <ClInclude Include="IndexBufferObjectGenerator.h">
       <Filter>Header Files\core\utils\generator</Filter>
     </ClInclude>
   </ItemGroup>
