@@ -172,6 +172,7 @@
     <ClInclude Include="Command.h" />
     <ClInclude Include="Defs.h" />
     <ClInclude Include="EventCatcher.h" />
+    <ClInclude Include="Generator.h" />
     <ClInclude Include="GLContext.h" />
     <ClInclude Include="IndexBufferObject.h" />
     <ClInclude Include="KeyboardInput.h" />

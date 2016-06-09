@@ -73,6 +73,12 @@
     <Filter Include="Header Files\core\ogl\buffers">
       <UniqueIdentifier>{318fb350-c17b-4189-a18b-339f210eb85a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\core\utils\generator">
+      <UniqueIdentifier>{7a6402f4-6fe2-4dab-b0fe-413f52d094c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\core\utils\generator">
+      <UniqueIdentifier>{938e3d31-ae7a-4c35-ae60-44f09ac584e8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
