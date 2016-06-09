@@ -79,6 +79,12 @@
     <Filter Include="Source Files\core\utils\generator">
       <UniqueIdentifier>{938e3d31-ae7a-4c35-ae60-44f09ac584e8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\core\utils\builder">
+      <UniqueIdentifier>{2dbfc664-95bf-4334-be97-d0e50e3aedf1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\core\utils\builder">
+      <UniqueIdentifier>{6b03df9c-4c9d-4587-be48-fc9355767ca7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -137,6 +143,9 @@
     </ClCompile>
     <ClCompile Include="IndexBufferObjectGenerator.cpp">
       <Filter>Source Files\core\utils\generator</Filter>
+    </ClCompile>
+    <ClCompile Include="VertexArrayObjectBuilder.cpp">
+      <Filter>Source Files\core\utils\builder</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -205,6 +214,9 @@
     </ClInclude>
     <ClInclude Include="IndexBufferObjectGenerator.h">
       <Filter>Header Files\core\utils\generator</Filter>
+    </ClInclude>
+    <ClInclude Include="VertexArrayObjectBuilder.h">
+      <Filter>Header Files\core\utils\builder</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

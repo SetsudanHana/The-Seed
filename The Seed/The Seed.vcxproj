@@ -165,6 +165,7 @@
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="TextureLoader.cpp" />
     <ClCompile Include="VertexArrayObject.cpp" />
+    <ClCompile Include="VertexArrayObjectBuilder.cpp" />
     <ClCompile Include="VertexBufferObject.cpp" />
     <ClCompile Include="VertexBufferObjectGenerator.cpp" />
     <ClCompile Include="Window.cpp" />
@@ -188,6 +189,7 @@
     <ClInclude Include="Texture.h" />
     <ClInclude Include="TextureLoader.h" />
     <ClInclude Include="VertexArrayObject.h" />
+    <ClInclude Include="VertexArrayObjectBuilder.h" />
     <ClInclude Include="VertexBufferObject.h" />
     <ClInclude Include="VertexBufferObjectGenerator.h" />
     <ClInclude Include="Window.h" />
