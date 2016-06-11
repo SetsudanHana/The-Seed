@@ -15,7 +15,7 @@ namespace gl {
 			VertexArrayObject(const VertexArrayObject&);
 			~VertexArrayObject();
 
-			void bindVbo(std::shared_ptr<VertexBufferObject> vbo);
+			void bindVbo(VertexBufferObject& vbo);
 			void useVAO();
 
 			void enableVBO(const VertexBufferObject::VertexBufferObjectType& type);
