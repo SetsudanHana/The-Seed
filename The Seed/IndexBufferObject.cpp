@@ -18,6 +18,7 @@ gl::IndexBufferObject::IndexBufferObject(unsigned & iboId, unsigned & size, GLen
 	std::unique_ptr<unsigned int, std::function<void(unsigned int*)>> ptr(&iboId, IndesBufferObjectDeleter());
 	mIboId = std::move(ptr);
 	mSize = size;
+	mMode = mode;
 }
 
 gl::IndexBufferObject::IndexBufferObject(const IndexBufferObject &){
