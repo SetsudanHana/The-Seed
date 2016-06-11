@@ -62,8 +62,8 @@ gl::Shader utils::ShaderLoader::load(const std::string& name)
 	glLinkProgram(*shader_programme);
 
 	std::stringstream out;
-	out << "Created Shader id: " << shader_programme;
-	utils::Log::Instance()->logError(TAG, out.str());
+	out << "Created Shader id: " << *shader_programme;
+	utils::Log::Instance()->logDebug(TAG, out.str());
 	return gl::Shader(*shader_programme);
 }
 
