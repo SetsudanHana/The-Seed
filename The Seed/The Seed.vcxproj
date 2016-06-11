@@ -158,6 +158,7 @@
     <ClCompile Include="KeyboardInput.cpp" />
     <ClCompile Include="Log.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Model2D.cpp" />
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="ShaderLoader.cpp" />
@@ -172,6 +173,7 @@
     <ClCompile Include="WindowSizeVisitor.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Model2D.h" />
     <ClInclude Include="Command.h" />
     <ClInclude Include="Defs.h" />
     <ClInclude Include="EventCatcher.h" />

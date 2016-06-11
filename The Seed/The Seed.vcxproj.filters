@@ -85,6 +85,12 @@
     <Filter Include="Source Files\core\utils\builder">
       <UniqueIdentifier>{6b03df9c-4c9d-4587-be48-fc9355767ca7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\core\ogl\model">
+      <UniqueIdentifier>{42da4cf5-7f95-4626-b688-6848ee6f1a75}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\core\ogl\model">
+      <UniqueIdentifier>{a8a0797a-ca2f-4f57-9330-7acca7a4b2ef}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -146,6 +152,9 @@
     </ClCompile>
     <ClCompile Include="VertexArrayObjectBuilder.cpp">
       <Filter>Source Files\core\utils\builder</Filter>
+    </ClCompile>
+    <ClCompile Include="Model2D.cpp">
+      <Filter>Source Files\core\ogl\model</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -217,6 +226,9 @@
     </ClInclude>
     <ClInclude Include="VertexArrayObjectBuilder.h">
       <Filter>Header Files\core\utils\builder</Filter>
+    </ClInclude>
+    <ClInclude Include="Model2D.h">
+      <Filter>Header Files\core\ogl\model</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
