@@ -72,6 +72,9 @@ bool gl::GLContext::init(const std::shared_ptr<window::Window>& window) {
 	glEnable(GL_DEPTH_TEST);
 	glDepthFunc(GL_LESS);
 
+	glEnable(GL_BLEND);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
 	initlialized = true;
 	return true;
 }
