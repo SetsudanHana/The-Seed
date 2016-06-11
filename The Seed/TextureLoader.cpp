@@ -12,7 +12,7 @@ utils::TextureLoader::~TextureLoader(){
 }
 
 gl::Texture utils::TextureLoader::load(const std::string& name){
-	UINT texture = 0;
+	UINT* texture = new UINT();
 	std::string path = TEXTURE_DIRECTORY + name;
 	FIBITMAP* bitmap = FreeImage_Load(FreeImage_GetFileType(path.c_str()), path.c_str());
 
@@ -27,9 +27,9 @@ gl::Texture utils::TextureLoader::load(const std::string& name){
 
 	FreeImage_Unload(bitmap);
 
-	glGenTextures(1, &texture);
+	glGenTextures(1, texture);
 
-	glBindTexture(GL_TEXTURE_2D, texture);
+	glBindTexture(GL_TEXTURE_2D, *texture);
 
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
@@ -40,5 +40,5 @@ gl::Texture utils::TextureLoader::load(const std::string& name){
 	FreeImage_Unload(pImage);
 
 	utils::Log::Instance()->logDebug(TAG, "Created texture from path: " + path);
-	return gl::Texture(texture, nWidth, nHeight);
+	return gl::Texture(*texture, nWidth, nHeight);
 }

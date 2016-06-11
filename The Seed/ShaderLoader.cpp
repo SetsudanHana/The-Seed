@@ -56,15 +56,15 @@ gl::Shader utils::ShaderLoader::load(const std::string& name)
 		return gl::Shader();
 	}
 
-	unsigned int shader_programme = glCreateProgram();
-	glAttachShader(shader_programme, fs);
-	glAttachShader(shader_programme, vs);
-	glLinkProgram(shader_programme);
+	unsigned* shader_programme = new unsigned(glCreateProgram());
+	glAttachShader(*shader_programme, fs);
+	glAttachShader(*shader_programme, vs);
+	glLinkProgram(*shader_programme);
 
 	std::stringstream out;
 	out << "Created Shader id: " << shader_programme;
 	utils::Log::Instance()->logError(TAG, out.str());
-	return gl::Shader(shader_programme);
+	return gl::Shader(*shader_programme);
 }
 
 bool utils::ShaderLoader::checkShaderErrors(const unsigned & shaderId){

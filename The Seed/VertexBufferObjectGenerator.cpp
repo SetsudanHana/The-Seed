@@ -12,9 +12,9 @@ utils::VertexBufferObjectGenerator::~VertexBufferObjectGenerator(){
 }
 
 gl::VertexBufferObject utils::VertexBufferObjectGenerator::generate(float pointsArray[], unsigned & size, gl::VertexBufferObject::VertexBufferObjectType & type) {
-	unsigned id;
-	glGenBuffers(1, &id);
-	glBindBuffer(GL_ARRAY_BUFFER, id);
+	unsigned* id = new unsigned();
+	glGenBuffers(1, id);
+	glBindBuffer(GL_ARRAY_BUFFER, *id);
 
 	switch (type) {
 		case gl::VertexBufferObject::POSITION_2:
@@ -23,7 +23,7 @@ gl::VertexBufferObject utils::VertexBufferObjectGenerator::generate(float points
 			break;
 	}
 
-	Log::Instance()->logDebug(TAG, "VertextBuffer created! Id: " + id);
+	Log::Instance()->logDebug(TAG, "VertextBuffer created! Id: " + *id);
 
-	return gl::VertexBufferObject(id, type);
+	return gl::VertexBufferObject(*id, type);
 }
