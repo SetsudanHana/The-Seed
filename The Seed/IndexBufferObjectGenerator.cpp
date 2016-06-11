@@ -11,7 +11,7 @@ utils::IndexBufferObjectGenerator::IndexBufferObjectGenerator(const IndexBufferO
 utils::IndexBufferObjectGenerator::~IndexBufferObjectGenerator(){
 }
 
-gl::IndexBufferObject utils::IndexBufferObjectGenerator::generate(short pointsArray[], unsigned & size, GLenum & type){
+gl::IndexBufferObject utils::IndexBufferObjectGenerator::generate(unsigned short pointsArray[], unsigned & size, GLenum & type){
 	unsigned* id = new unsigned();
 	glGenBuffers(1, id);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, *id);
