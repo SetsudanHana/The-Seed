@@ -23,7 +23,9 @@ gl::VertexBufferObject utils::VertexBufferObjectGenerator::generate(float points
 			break;
 	}
 
-	Log::Instance()->logDebug(TAG, "VertextBuffer created! Id: " + *id);
+	std::stringstream out;
+	out << "VertextBuffer created! Id: " << *id;
+	Log::Instance()->logDebug(TAG, out.str());
 
 	return gl::VertexBufferObject(*id, type);
 }

@@ -17,7 +17,9 @@ gl::IndexBufferObject utils::IndexBufferObjectGenerator::generate(short pointsAr
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, *id);
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, size * sizeof(short), pointsArray, GL_STATIC_DRAW);
 
-	Log::Instance()->logDebug(TAG, "IndexBufefr created! Id: " + *id);
+	std::stringstream out;
+	out << "IndexBufefr created! Id: " << *id;
+	Log::Instance()->logDebug(TAG, out.str());
 
 	return gl::IndexBufferObject(*id, size, type);
 }

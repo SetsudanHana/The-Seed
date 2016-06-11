@@ -14,6 +14,8 @@ utils::VertexArrayObjectBuilder::~VertexArrayObjectBuilder(){
 gl::VertexArrayObject utils::VertexArrayObjectBuilder::build(){
 	unsigned* id = new unsigned();
 	glGenVertexArrays(1, id);
-	Log::Instance()->logDebug(TAG, "VertexArray created! Id: " + *id);
+	std::stringstream out;
+	out << "VertexArray created! Id: " << *id;
+	Log::Instance()->logDebug(TAG, out.str());
 	return gl::VertexArrayObject(*id);
 }
