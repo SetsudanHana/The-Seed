@@ -72,8 +72,8 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 	auto vaob = std::make_unique<utils::VertexArrayObjectBuilder>();
 	auto vao = vaob->build();
 
-	vao.bindVbo(positionVbo);
-	vao.bindVbo(textureVbo);
+	vao->bindVbo(positionVbo);
+	vao->bindVbo(textureVbo);
 
 	auto matrix = glm::ortho(-(float)WINDOW_WIDTH/2, (float)WINDOW_WIDTH/2, -(float)WINDOW_HEIGHT/2, (float)WINDOW_HEIGHT/2, 0.0f, 1.0f);
 
@@ -83,14 +83,14 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 
 		renderer->clear(glm::vec4(0.8f, 0.8f, 0.8f, 1.0f));
 		
-		shader.useProgram();
-		shader.setMatrix4(matrix, "matrix");
-		shader.setSampler(0, "sampler");
+		shader->useProgram();
+		shader->setMatrix4(matrix, "matrix");
+		shader->setSampler(0, "sampler");
 
-		mario.useTexture(0);
+		mario->useTexture(0);
 
-		vao.useVAO();
-		indexBuffer.useIBO();
+		vao->useVAO();
+		indexBuffer->useIBO();
 
 		renderer->swap(window);
 	}

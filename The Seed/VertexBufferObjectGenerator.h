@@ -15,7 +15,7 @@ namespace utils {
 			VertexBufferObjectGenerator(const VertexBufferObjectGenerator&);
 			~VertexBufferObjectGenerator();
 
-			gl::VertexBufferObject generate(float pointsArray[], unsigned& size, gl::VertexBufferObject::VertexBufferObjectType& type);
+			std::shared_ptr<gl::VertexBufferObject> generate(float pointsArray[], unsigned& size, gl::VertexBufferObject::VertexBufferObjectType& type);
 
 	};
 

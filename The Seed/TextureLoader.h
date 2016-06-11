@@ -14,7 +14,7 @@ namespace utils {
 			TextureLoader(const TextureLoader&);
 			~TextureLoader();
 
-			gl::Texture load(const std::string& name);
+			std::shared_ptr<gl::Texture> load(const std::string& name);
 
 	};
 

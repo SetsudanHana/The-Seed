@@ -9,7 +9,7 @@ namespace utils {
 		public:
 			virtual ~Generator() {
 			}
-			virtual T generate(A pointsArray[], unsigned& size, M& type) = 0;
+			virtual std::shared_ptr<T> generate(A pointsArray[], unsigned& size, M& type) = 0;
 	};
 
 }

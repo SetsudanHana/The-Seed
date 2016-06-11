@@ -15,7 +15,7 @@ namespace utils {
 			IndexBufferObjectGenerator(const IndexBufferObjectGenerator&);
 			~IndexBufferObjectGenerator();
 
-			gl::IndexBufferObject generate(unsigned short pointsArray[], unsigned& size, GLenum& type);
+			std::shared_ptr<gl::IndexBufferObject> generate(unsigned short pointsArray[], unsigned& size, GLenum& type);
 	};
 
 }

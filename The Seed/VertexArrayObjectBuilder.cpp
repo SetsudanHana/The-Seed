@@ -11,11 +11,11 @@ utils::VertexArrayObjectBuilder::VertexArrayObjectBuilder(const VertexArrayObjec
 utils::VertexArrayObjectBuilder::~VertexArrayObjectBuilder(){
 }
 
-gl::VertexArrayObject utils::VertexArrayObjectBuilder::build(){
+std::shared_ptr<gl::VertexArrayObject> utils::VertexArrayObjectBuilder::build() {
 	unsigned* id = new unsigned();
 	glGenVertexArrays(1, id);
 	std::stringstream out;
 	out << "VertexArray created! Id: " << *id;
 	Log::Instance()->logDebug(TAG, out.str());
-	return gl::VertexArrayObject(*id);
+	return std::shared_ptr<gl::VertexArrayObject>(new gl::VertexArrayObject(*id));
 }

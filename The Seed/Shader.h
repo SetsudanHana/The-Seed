@@ -3,14 +3,22 @@
 #include "stdafx.h"
 
 #include "Log.h"
+
+namespace utils {
+	class ShaderLoader;
+}
+
 namespace gl {
 
 	class Shader {
 
-		public:
+		friend class utils::ShaderLoader;
+
+		private:
 			Shader();
 			Shader(unsigned& program);
 			Shader(const Shader&);
+		public:
 			~Shader();
 
 			void useProgram();

@@ -5,17 +5,24 @@
 #include "VertexBufferObject.h"
 #include "Log.h"
 
+namespace utils {
+	class VertexArrayObjectBuilder;
+}
+
 namespace gl {
 
 	class VertexArrayObject {
 
-		public:
+		friend class utils::VertexArrayObjectBuilder;
+
+		private:
 			VertexArrayObject();
 			VertexArrayObject(unsigned&);
 			VertexArrayObject(const VertexArrayObject&);
+		public:
 			~VertexArrayObject();
 
-			void bindVbo(VertexBufferObject& vbo);
+			void bindVbo(std::shared_ptr<VertexBufferObject> vbo);
 			void useVAO();
 
 			void enableVBO(const VertexBufferObject::VertexBufferObjectType& type);

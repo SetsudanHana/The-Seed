@@ -11,7 +11,7 @@ utils::IndexBufferObjectGenerator::IndexBufferObjectGenerator(const IndexBufferO
 utils::IndexBufferObjectGenerator::~IndexBufferObjectGenerator(){
 }
 
-gl::IndexBufferObject utils::IndexBufferObjectGenerator::generate(unsigned short pointsArray[], unsigned & size, GLenum & type){
+std::shared_ptr<gl::IndexBufferObject> utils::IndexBufferObjectGenerator::generate(unsigned short pointsArray[], unsigned & size, GLenum & type){
 	unsigned* id = new unsigned();
 	glGenBuffers(1, id);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, *id);
@@ -21,5 +21,5 @@ gl::IndexBufferObject utils::IndexBufferObjectGenerator::generate(unsigned short
 	out << "IndexBufefr created! Id: " << *id;
 	Log::Instance()->logDebug(TAG, out.str());
 
-	return gl::IndexBufferObject(*id, size, type);
+	return std::shared_ptr<gl::IndexBufferObject>(new gl::IndexBufferObject(*id, size, type));
 }

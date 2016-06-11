@@ -4,10 +4,15 @@
 
 #include "Log.h"
 
+namespace utils {
+	class VertexBufferObjectGenerator;
+}
+
 namespace gl {
 
 	class VertexBufferObject {
 
+		friend class utils::VertexBufferObjectGenerator;
 		friend class VertexArrayObject;
 
 		public:
@@ -16,10 +21,11 @@ namespace gl {
 				TEXTURE_COORDS
 			};
 
-		public:
+		private:
 			VertexBufferObject();
 			VertexBufferObject(unsigned&, const VertexBufferObjectType&);
 			VertexBufferObject(const VertexBufferObject&);
+		public:
 			~VertexBufferObject();
 
 			VertexBufferObjectType getType();

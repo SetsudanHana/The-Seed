@@ -11,20 +11,19 @@ utils::ShaderLoader::ShaderLoader(const ShaderLoader &){
 utils::ShaderLoader::~ShaderLoader(){
 }
 
-gl::Shader utils::ShaderLoader::load(const std::string& name)
-{
+std::shared_ptr<gl::Shader> utils::ShaderLoader::load(const std::string& name) {
 	std::string vs_container = loadShaderFile(SHADER_DIRECTORY + name + ".vs");
 
 	if (vs_container == "") {
 		utils::Log::Instance()->logError(TAG, "VertexShader " + name + ": failed to read file");
-		return gl::Shader();
+		return nullptr;
 	}
 
 	std::string fs_container = loadShaderFile(SHADER_DIRECTORY + name + ".fs");
 
 	if (fs_container == "") {
 		utils::Log::Instance()->logError(TAG, "FragmentShader " + name + ": failed to read file");
-		return gl::Shader();
+		return nullptr;
 	}
 
 	const char* vertex_shader = vs_container.c_str();
@@ -46,14 +45,14 @@ gl::Shader utils::ShaderLoader::load(const std::string& name)
 
 	if (!result) {
 		utils::Log::Instance()->logError(TAG, "VertexShader " + name + " compiled with errors");
-		return gl::Shader();
+		return nullptr;
 	}
 
 	result = checkShaderErrors(fs);
 
 	if (!result) {
 		utils::Log::Instance()->logError(TAG, "FragmentShader " + name + " compiled with errors");
-		return gl::Shader();
+		return nullptr;
 	}
 
 	unsigned* shader_programme = new unsigned(glCreateProgram());
@@ -64,7 +63,7 @@ gl::Shader utils::ShaderLoader::load(const std::string& name)
 	std::stringstream out;
 	out << "Created Shader id: " << *shader_programme;
 	utils::Log::Instance()->logDebug(TAG, out.str());
-	return gl::Shader(*shader_programme);
+	return std::shared_ptr<gl::Shader>(new gl::Shader(*shader_programme));
 }
 
 bool utils::ShaderLoader::checkShaderErrors(const unsigned & shaderId){

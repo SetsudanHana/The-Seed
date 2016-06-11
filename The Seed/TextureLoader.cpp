@@ -11,14 +11,14 @@ utils::TextureLoader::TextureLoader(const TextureLoader &){
 utils::TextureLoader::~TextureLoader(){
 }
 
-gl::Texture utils::TextureLoader::load(const std::string& name){
+std::shared_ptr<gl::Texture> utils::TextureLoader::load(const std::string& name){
 	UINT* texture = new UINT();
 	std::string path = TEXTURE_DIRECTORY + name;
 	FIBITMAP* bitmap = FreeImage_Load(FreeImage_GetFileType(path.c_str()), path.c_str());
 
 	if (!bitmap) {
 		utils::Log::Instance()->logError(TAG, "Failed to load texture: " + path);
-		return gl::Texture();
+		nullptr;
 	}
 
 	FIBITMAP *pImage = FreeImage_ConvertTo32Bits(bitmap);
@@ -40,5 +40,5 @@ gl::Texture utils::TextureLoader::load(const std::string& name){
 	FreeImage_Unload(pImage);
 
 	utils::Log::Instance()->logDebug(TAG, "Created texture from path: " + path);
-	return gl::Texture(*texture, nWidth, nHeight);
+	return std::shared_ptr<gl::Texture>(new gl::Texture(*texture, nWidth, nHeight));
 }

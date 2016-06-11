@@ -14,7 +14,7 @@ namespace utils {
 			VertexArrayObjectBuilder(const VertexArrayObjectBuilder&);
 			~VertexArrayObjectBuilder();
 
-			gl::VertexArrayObject build();
+			std::shared_ptr<gl::VertexArrayObject> build();
 
 	};
 

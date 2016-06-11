@@ -4,14 +4,21 @@
 
 #include "Log.h"
 
+namespace utils {
+	class TextureLoader;
+}
+
 namespace gl {
 
 	class Texture {
 	
-		public:
+		friend class utils::TextureLoader;
+
+		private:
 			Texture();
 			Texture(unsigned&, unsigned&, unsigned&);
 			Texture(const Texture&);
+		public:
 			~Texture();
 
 			void useTexture(const unsigned& sampler);

@@ -8,7 +8,7 @@ namespace utils {
 	class Loader {
 		public:
 			virtual ~Loader() {}
-			virtual T load(const std::string& name) = 0;
+			virtual std::shared_ptr<T> load(const std::string& name) = 0;
 	};
 
 }

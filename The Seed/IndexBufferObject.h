@@ -4,14 +4,21 @@
 
 #include "Log.h"
 
+namespace utils {
+	class IndexBufferObjectGenerator;
+}
+
 namespace gl {
 
 	class IndexBufferObject {
 
-		public:
+		friend class utils::IndexBufferObjectGenerator;
+
+		private:
 			IndexBufferObject();
 			IndexBufferObject(unsigned&, unsigned&, GLenum&);
 			IndexBufferObject(const IndexBufferObject&);
+		public:
 			~IndexBufferObject();
 
 			void useIBO();

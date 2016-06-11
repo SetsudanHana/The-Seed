@@ -11,7 +11,7 @@ utils::VertexBufferObjectGenerator::VertexBufferObjectGenerator(const VertexBuff
 utils::VertexBufferObjectGenerator::~VertexBufferObjectGenerator(){
 }
 
-gl::VertexBufferObject utils::VertexBufferObjectGenerator::generate(float pointsArray[], unsigned & size, gl::VertexBufferObject::VertexBufferObjectType & type) {
+std::shared_ptr<gl::VertexBufferObject> utils::VertexBufferObjectGenerator::generate(float pointsArray[], unsigned & size, gl::VertexBufferObject::VertexBufferObjectType & type) {
 	unsigned* id = new unsigned();
 	glGenBuffers(1, id);
 	glBindBuffer(GL_ARRAY_BUFFER, *id);
@@ -27,5 +27,5 @@ gl::VertexBufferObject utils::VertexBufferObjectGenerator::generate(float points
 	out << "VertextBuffer created! Id: " << *id;
 	Log::Instance()->logDebug(TAG, out.str());
 
-	return gl::VertexBufferObject(*id, type);
+	return std::shared_ptr<gl::VertexBufferObject>(new gl::VertexBufferObject(*id, type));
 }

@@ -16,7 +16,7 @@ namespace utils {
 			ShaderLoader(const ShaderLoader&);
 			~ShaderLoader();
 
-			gl::Shader load(const std::string& name);
+			std::shared_ptr<gl::Shader> load(const std::string& name);
 
 		private:
 			bool checkShaderErrors(const unsigned&);
