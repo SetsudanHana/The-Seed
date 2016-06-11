@@ -27,7 +27,6 @@ gl::IndexBufferObject::~IndexBufferObject(){
 }
 
 void gl::IndexBufferObject::useIBO(){
-	const size_t intHashcode = typeid(int).hash_code();
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, *mIboId);
 	glDrawElements(mMode, mSize, GL_UNSIGNED_SHORT, (void*)0);
 }
