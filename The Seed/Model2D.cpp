@@ -29,3 +29,7 @@ void gl::Model2D::rotate(const float& angle){
 void gl::Model2D::translate(const glm::vec2& vec){
 	mWorldMatrix = glm::translate(mWorldMatrix, glm::vec3(vec, 0.0f));
 }
+
+glm::mat4 gl::Model2D::getWorldMatrix() {
+	return mWorldMatrix;
+}

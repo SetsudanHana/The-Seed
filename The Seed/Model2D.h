@@ -23,6 +23,8 @@ namespace gl {
 			void rotate(const float& angle);
 			void translate(const glm::vec2& vec);
 
+			glm::mat4 getWorldMatrix();
+
 		private:
 			std::shared_ptr<gl::Drawable> mDrawable;
 			glm::mat4 mWorldMatrix;

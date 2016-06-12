@@ -28,6 +28,7 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 	renderer->bindWith(glContext);
 
 	bool end = false;
+	float time = 0.0f;
 
 	auto input = std::make_shared<input::KeyboardInput>();
 	auto eventCatcher = std::make_unique<input::EventCatcher>();
@@ -52,15 +53,24 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 		end = eventCatcher->catchEvents();
 		input->execKeysDown();
 
+		marioModel->rotate(1.0f * time);
+
+		auto start = std::chrono::system_clock::now();
+
 		renderer->clear(glm::vec4(0.8f, 0.8f, 0.8f, 1.0f));
 		
 		shader->useProgram();
 		shader->setMatrix4(matrix, "matrix");
 		shader->setSampler(sampler, "sampler");
 
+		shader->setMatrix4(marioModel->getWorldMatrix(), "modelMatrix");
 		marioModel->draw(sampler);
 
 		renderer->swap(window);
+
+		auto finish = std::chrono::system_clock::now();
+
+		time = 0.000001f * std::chrono::duration_cast<std::chrono::microseconds>(finish - start).count();
 	}
 
 	return 0;
