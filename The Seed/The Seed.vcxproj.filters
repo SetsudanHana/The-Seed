@@ -159,6 +159,9 @@
     <ClCompile Include="Drawable.cpp">
       <Filter>Source Files\core\ogl\model</Filter>
     </ClCompile>
+    <ClCompile Include="GLContextLibrary.cpp">
+      <Filter>Source Files\core\ogl</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -235,6 +238,9 @@
     </ClInclude>
     <ClInclude Include="Drawable.h">
       <Filter>Header Files\core\ogl\model</Filter>
+    </ClInclude>
+    <ClInclude Include="GLContextLibrary.h">
+      <Filter>Header Files\core\ogl</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

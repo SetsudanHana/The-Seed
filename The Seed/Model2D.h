@@ -8,6 +8,8 @@ namespace gl {
 
 	class Model2D {
 
+		friend class GLContextLibrary;
+
 		private:
 			Model2D();
 			Model2D(std::shared_ptr<Drawable> drawable);

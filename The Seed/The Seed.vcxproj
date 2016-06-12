@@ -154,6 +154,7 @@
     <ClCompile Include="Drawable.cpp" />
     <ClCompile Include="EventCatcher.cpp" />
     <ClCompile Include="GLContext.cpp" />
+    <ClCompile Include="GLContextLibrary.cpp" />
     <ClCompile Include="IndexBufferObject.cpp" />
     <ClCompile Include="IndexBufferObjectGenerator.cpp" />
     <ClCompile Include="KeyboardInput.cpp" />
@@ -175,6 +176,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Drawable.h" />
+    <ClInclude Include="GLContextLibrary.h" />
     <ClInclude Include="Model2D.h" />
     <ClInclude Include="Command.h" />
     <ClInclude Include="Defs.h" />

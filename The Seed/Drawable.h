@@ -10,6 +10,8 @@ namespace gl {
 
 	class Drawable {
 
+		friend class GLContextLibrary;
+
 		private:
 			Drawable();
 			Drawable(const Drawable&);

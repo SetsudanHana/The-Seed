@@ -9,6 +9,8 @@
 #include <chrono>
 #include <map>
 #include <functional>
+#include <atomic>
+#include <vector>
 
 //SDL includes
 #include <SDL.h>
