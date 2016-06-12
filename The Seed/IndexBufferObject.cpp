@@ -2,7 +2,7 @@
 
 static std::string TAG = "IndexBufferObject";
 
-struct IndesBufferObjectDeleter {
+struct IndexBufferObjectDeleter {
 	inline void operator()(unsigned* iboId) {
 		std::stringstream out;
 		out << "Remove IBO: " << *iboId;
@@ -15,7 +15,7 @@ gl::IndexBufferObject::IndexBufferObject(){
 }
 
 gl::IndexBufferObject::IndexBufferObject(unsigned & iboId, unsigned & size, GLenum& mode) {
-	std::unique_ptr<unsigned int, std::function<void(unsigned int*)>> ptr(&iboId, IndesBufferObjectDeleter());
+	std::unique_ptr<unsigned int, std::function<void(unsigned int*)>> ptr(&iboId, IndexBufferObjectDeleter());
 	mIboId = std::move(ptr);
 	mSize = size;
 	mMode = mode;
