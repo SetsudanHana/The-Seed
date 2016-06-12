@@ -4,15 +4,9 @@
 
 #include "Drawable.h"
 
-namespace utils {
-	class Model2DBuilder;
-}
-
 namespace gl {
 
 	class Model2D {
-
-		friend class utils::Model2DBuilder;
 
 		private:
 			Model2D();
