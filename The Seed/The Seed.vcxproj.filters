@@ -156,6 +156,9 @@
     <ClCompile Include="Model2D.cpp">
       <Filter>Source Files\core\ogl\model</Filter>
     </ClCompile>
+    <ClCompile Include="Drawable.cpp">
+      <Filter>Source Files\core\ogl\model</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -228,6 +231,9 @@
       <Filter>Header Files\core\utils\builder</Filter>
     </ClInclude>
     <ClInclude Include="Model2D.h">
+      <Filter>Header Files\core\ogl\model</Filter>
+    </ClInclude>
+    <ClInclude Include="Drawable.h">
       <Filter>Header Files\core\ogl\model</Filter>
     </ClInclude>
   </ItemGroup>

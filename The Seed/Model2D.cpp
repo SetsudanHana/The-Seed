@@ -3,11 +3,9 @@
 gl::Model2D::Model2D(){
 }
 
-gl::Model2D::Model2D(std::shared_ptr<gl::Texture> texture, std::shared_ptr<gl::VertexArrayObject> vao, std::shared_ptr<gl::IndexBufferObject> ibo) {
+gl::Model2D::Model2D(std::shared_ptr<gl::Drawable> drawable) {
 	mWorldMatrix = glm::mat4(1.0f);
-	mTexture = texture;
-	mVao = vao;
-	mIbo = ibo;
+	mDrawable = drawable;
 }
 
 gl::Model2D::Model2D(const Model2D &){
@@ -17,9 +15,7 @@ gl::Model2D::~Model2D(){
 }
 
 void gl::Model2D::draw(unsigned & sampler) {
-	mTexture->useTexture(sampler);
-	mVao->useVAO();
-	mIbo->useIBO();
+	mDrawable->draw(sampler);
 }
 
 void gl::Model2D::scale(const glm::vec2& vec){
