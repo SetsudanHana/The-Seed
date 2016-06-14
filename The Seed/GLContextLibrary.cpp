@@ -23,6 +23,17 @@ int gl::GLContextLibrary::createVBO(float pointsArray[], unsigned & size, Vertex
 	return id;
 }
 
+int gl::GLContextLibrary::createDynamicVBO(float pointsArray[], unsigned & size, VertexBufferObject::VertexBufferObjectType & type) {
+	auto vbo = mDynamicVboGenerator.generate(pointsArray, size, type);
+	if (!vbo) {
+		utils::Log::Instance()->logError(TAG, "Could not create dynamic VBO");
+		return -1;
+	}
+	int id = nextId();
+	mVbosMap.insert(std::pair<int, std::shared_ptr<gl::VertexBufferObject>>(id, std::static_pointer_cast<gl::VertexBufferObject>(vbo)));
+	return id;
+}
+
 int gl::GLContextLibrary::createIBO(unsigned short pointsArray[], unsigned & size, GLenum & type){
 	auto ibo = mIboGenerator.generate(pointsArray, size, type);
 	if (!ibo) {
@@ -86,6 +97,11 @@ int gl::GLContextLibrary::createShader(std::string name) {
 
 std::shared_ptr<gl::VertexBufferObject> gl::GLContextLibrary::getVBO(const int & id) {
 	return mVbosMap[id];
+}
+
+std::shared_ptr<gl::DynamicVertexBufferObject> gl::GLContextLibrary::getDynamicVBO(const int & id)
+{
+	return std::static_pointer_cast<gl::DynamicVertexBufferObject>(mVbosMap[id]);
 }
 
 std::shared_ptr<gl::IndexBufferObject> gl::GLContextLibrary::getIBO(const int & id) {

@@ -5,12 +5,14 @@
 #include "Log.h"
 
 #include "VertexBufferObject.h"
+#include "DynamicVertexBufferObject.h"
 #include "IndexBufferObject.h"
 #include "VertexArrayObject.h"
 #include "Shader.h"
 #include "Texture.h"
 
 #include "VertexBufferObjectGenerator.h"
+#include "DynamicVertexBufferObjectGenerator.h"
 #include "IndexBufferObjectGenerator.h"
 #include "VertexArrayObjectBuilder.h"
 #include "TextureLoader.h"
@@ -29,6 +31,7 @@ namespace gl {
 			~GLContextLibrary();
 
 			int createVBO(float pointsArray[], unsigned & size, VertexBufferObject::VertexBufferObjectType & type);
+			int createDynamicVBO(float pointsArray[], unsigned & size, VertexBufferObject::VertexBufferObjectType & type);
 			int createIBO(unsigned short pointsArray[], unsigned & size, GLenum & type);
 			int createVAO(std::vector<std::shared_ptr<VertexBufferObject>> vbos);
 			int createVAO(std::vector<int> vboIds);
@@ -37,6 +40,7 @@ namespace gl {
 			int createShader(std::string name);
 
 			std::shared_ptr<VertexBufferObject> getVBO(const int& id);
+			std::shared_ptr<DynamicVertexBufferObject> getDynamicVBO(const int& id);
 			std::shared_ptr<IndexBufferObject> getIBO(const int& id);
 			std::shared_ptr<VertexArrayObject> getVAO(const int& id);
 			std::shared_ptr<Texture> getTexture(const int& id);
@@ -63,6 +67,7 @@ namespace gl {
 			std::map<int, std::shared_ptr<Shader>> mShadersMap;
 
 			utils::VertexBufferObjectGenerator mVboGenerator;
+			utils::DynamicVertexBufferObjectGenerator mDynamicVboGenerator;
 			utils::IndexBufferObjectGenerator mIboGenerator;
 			utils::VertexArrayObjectBuilder mVaoGenerator;
 			utils::TextureLoader mTextureLoader;
