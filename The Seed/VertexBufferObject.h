@@ -23,8 +23,11 @@ namespace gl {
 
 		private:
 			VertexBufferObject();
-			VertexBufferObject(unsigned&, const VertexBufferObjectType&);
 			VertexBufferObject(const VertexBufferObject&);
+
+		protected:
+			VertexBufferObject(unsigned&, const VertexBufferObjectType&);
+
 		public:
 			~VertexBufferObject();
 
@@ -32,6 +35,7 @@ namespace gl {
 
 		private:
 			VertexBufferObjectType mType;
+		protected:
 			std::unique_ptr<unsigned, std::function<void(unsigned int*)>> mVboId;
 	};
 

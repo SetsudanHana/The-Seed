@@ -26,21 +26,11 @@ gl::VertexArrayObject::~VertexArrayObject(){
 }
 
 void gl::VertexArrayObject::bindVbo(std::shared_ptr<VertexBufferObject> vbo) {
-	glBindVertexArray(*mVaoId);
-	glBindBuffer(GL_ARRAY_BUFFER, *vbo->mVboId);
+	bindVbo(*vbo->mVboId, vbo->getType());
+}
 
-	switch (vbo->getType()) {
-		case VertexBufferObject::TEXTURE_COORDS:
-		case VertexBufferObject::POSITION_2:
-			glVertexAttribPointer(vbo->getType(), 2, GL_FLOAT, GL_FALSE, 0, NULL);
-			break;
-	}
-
-	std::stringstream out;
-	out << "VertexBuffer id: " << *vbo->mVboId << " binded to VertexArray id: " << *mVaoId;
-	utils::Log::Instance()->logDebug(TAG, out.str());
-
-	enableVBO(vbo->getType());
+void gl::VertexArrayObject::bindVbo(std::shared_ptr<DynamicVertexBufferObject> vbo) {
+	bindVbo(*vbo->mVboId, vbo->getType());
 }
 
 void gl::VertexArrayObject::useVAO(){
@@ -63,4 +53,22 @@ void gl::VertexArrayObject::disableVBO(const VertexBufferObject::VertexBufferObj
 	std::stringstream out;
 	out << "VertexBufferType: " << type << " disabled in VertexArray id: " << *mVaoId;
 	utils::Log::Instance()->logDebug(TAG, out.str());
+}
+
+void gl::VertexArrayObject::bindVbo(const unsigned & vboId, const VertexBufferObject::VertexBufferObjectType & type) {
+	glBindVertexArray(*mVaoId);
+	glBindBuffer(GL_ARRAY_BUFFER, vboId);
+
+	switch (type) {
+	case VertexBufferObject::TEXTURE_COORDS:
+	case VertexBufferObject::POSITION_2:
+		glVertexAttribPointer(type, 2, GL_FLOAT, GL_FALSE, 0, NULL);
+		break;
+	}
+
+	std::stringstream out;
+	out << "VertexBuffer id: " << vboId << " binded to VertexArray id: " << *mVaoId;
+	utils::Log::Instance()->logDebug(TAG, out.str());
+
+	enableVBO(type);
 }

@@ -152,6 +152,7 @@
   <ItemGroup>
     <ClCompile Include="Command.cpp" />
     <ClCompile Include="Drawable.cpp" />
+    <ClCompile Include="DynamicVertexBufferObjectGenerator.cpp" />
     <ClCompile Include="EventCatcher.cpp" />
     <ClCompile Include="GLContext.cpp" />
     <ClCompile Include="GLContextLibrary.cpp" />
@@ -176,6 +177,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Drawable.h" />
+    <ClInclude Include="DynamicVertexBufferObject.h" />
+    <ClInclude Include="DynamicVertexBufferObjectGenerator.h" />
     <ClInclude Include="GLContextLibrary.h" />
     <ClInclude Include="Model2D.h" />
     <ClInclude Include="Command.h" />

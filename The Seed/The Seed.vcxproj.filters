@@ -162,6 +162,9 @@
     <ClCompile Include="GLContextLibrary.cpp">
       <Filter>Source Files\core\ogl</Filter>
     </ClCompile>
+    <ClCompile Include="DynamicVertexBufferObjectGenerator.cpp">
+      <Filter>Source Files\core\utils\generator</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -241,6 +244,12 @@
     </ClInclude>
     <ClInclude Include="GLContextLibrary.h">
       <Filter>Header Files\core\ogl</Filter>
+    </ClInclude>
+    <ClInclude Include="DynamicVertexBufferObject.h">
+      <Filter>Header Files\core\ogl\buffers</Filter>
+    </ClInclude>
+    <ClInclude Include="DynamicVertexBufferObjectGenerator.h">
+      <Filter>Header Files\core\utils\generator</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
